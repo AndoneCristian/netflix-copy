@@ -5,7 +5,7 @@ const Row = ({ title, fetchURL }) => {
   const [movies, setMovies] = useState([]);
   useEffect(() => {
     axios.get(fetchURL).then((response) => setMovies(response.data.results));
-  }, []);
+  }, [fetchURL]);
   console.log(movies);
 
   return (
